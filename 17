@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class SwapFirstLastDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String num = sc.next();         // Read as String for easy manipulation
+
+        // If number has only one digit, it remains the same
+        if (num.length() <= 1) {
+            System.out.println(num);
+            return;
+        }
+
+        // Build the swapped string
+        char first = num.charAt(0);
+        char last  = num.charAt(num.length() - 1);
+
+        // Middle part remains unchanged
+        String middle = num.substring(1, num.length() - 1);
+
+        // Concatenate in swapped order
+        String swapped = last + middle + first;
+        System.out.println(swapped);
+    }
+}
