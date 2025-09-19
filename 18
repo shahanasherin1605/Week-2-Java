@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class FirstLastOccurrence {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String num = sc.next();       // Read the number as a String
+        char d = sc.next().charAt(0); // Digit to find (as character)
+
+        int first = -1;
+        int last = -1;
+
+        // Loop through the string to locate the digit
+        for (int i = 0; i < num.length(); i++) {
+            if (num.charAt(i) == d) {
+                if (first == -1) first = i + 1; // 1-based index
+                last = i + 1;                   // update last each time
+            }
+        }
+
+        if (first == -1) {
+            System.out.println("Digit not found");
+        } else {
+            System.out.println("First=" + first + ", Last=" + last);
+        }
+    }
+}
