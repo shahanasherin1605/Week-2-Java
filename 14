@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class CenterDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String num = sc.next();        // Read as String for easy length check
+
+        // If length is odd, print the middle digit
+        if (num.length() % 2 == 1) {
+            int midIndex = num.length() / 2;
+            System.out.println(num.charAt(midIndex));
+        } else {
+            // Even length → no single center digit
+            System.out.println("-1");
+        }
+    }
+}
